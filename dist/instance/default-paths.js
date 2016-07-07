@@ -10,6 +10,11 @@ var State = {
   styles: {
     input: 'styles/sass',
     output: 'styles/css'
+  },
+
+  javascript: {
+    // input: 'js',
+    // output: 'js'
   }
 
 };

@@ -1,7 +1,11 @@
-import Bolt from './bolt'
+import Main from './main'
+import Instance from './instance'
 
-import Default from './default.tasks'
-import Styles from './styles.tasks'
+import Default from './tasks/default.tasks'
+import Styles from './tasks/styles.tasks'
+import Javascript from './tasks/javascript.tasks'
+
+let Bolt = Object.assign(Instance, Main)
 
 export default Bolt
 module.exports = Bolt

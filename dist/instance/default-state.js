@@ -7,7 +7,7 @@ var State = {
   mode: 'production',
 
   // Run sequences.
-  production: ['state:setmode:production', 'clean:dist', 'styles:build'],
+  production: ['state:setmode:production', 'clean:dist', 'styles:build', 'javascript:build'],
 
   development: ['state:setmode:development', 'clean:dist'],
 

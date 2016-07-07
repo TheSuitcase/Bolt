@@ -1,5 +1,4 @@
-import Bolt from './bolt'
-import State from './state'
+import Bolt from '../main'
 import Path from 'path'
 
 // Styles.
@@ -17,7 +16,7 @@ let Package = require(process.env.PWD + '/package.json')
 Bolt.task('styles:build', (bolt, paths, state) => {
   let stream = bolt.src(Path.join(paths.input, paths.styles.input) + '/**/*.scss')
   let taskState = state.styles[state.mode]
-
+  console.log('run styles')
   if (taskState.sass) {
     stream = stream.pipe(Sass(taskState.sass))
   }

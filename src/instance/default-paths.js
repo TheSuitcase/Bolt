@@ -7,6 +7,11 @@ let State = {
     output: 'styles/css',
   },
 
+  javascript: {
+    // input: 'js',
+    // output: 'js'
+  }
+
 }
 
 export default State

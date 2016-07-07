@@ -1,5 +1,4 @@
-import Bolt from './bolt'
-import State from './state'
+import Bolt from '../main'
 import Fs from 'fs-extra'
 
 // Set state modes.

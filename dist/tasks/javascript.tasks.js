@@ -1,12 +1,8 @@
 'use strict';
 
-var _bolt = require('./bolt');
+var _main = require('../main');
 
-var _bolt2 = _interopRequireDefault(_bolt);
-
-var _state = require('./state');
-
-var _state2 = _interopRequireDefault(_state);
+var _main2 = _interopRequireDefault(_main);
 
 var _path = require('path');
 
@@ -44,34 +40,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Package = require(process.env.PWD + '/package.json');
 
 // Empty the output directory.
-_bolt2.default.task('styles:build', function (bolt, paths, state) {
-  var stream = bolt.src(_path2.default.join(paths.input, paths.styles.input) + '/**/*.scss');
+_main2.default.task('javascript:build', function (bolt, paths, state) {
+  var stream = bolt.src(_path2.default.join(paths.input, paths.styles.input) + '/**/*.js');
   var taskState = state.styles[state.mode];
-
-  if (taskState.sass) {
-    stream = stream.pipe((0, _gulpSass2.default)(taskState.sass));
-  }
-
-  if (taskState.flatten) {
-    stream = stream.pipe((0, _gulpFlatten2.default)());
-  }
-
-  if (taskState.prexif) {
-    stream = stream.prefix((0, _gulpAutoprefixer2.default)(taskState.prefix));
-  }
-
-  if (taskState.header) {
-    stream = stream.pipe((0, _gulpHeader2.default)(state.headers.full, { package: Package }));
-  }
-
-  stream = stream.pipe(bolt.dest(_path2.default.join(paths.output, paths.styles.output)));
-
-  if (!taskState.minify) {
-    return stream;
-  }
-
-  stream = stream.pipe((0, _gulpCssnano2.default)(taskState.minify));
-  stream = stream.pipe((0, _gulpRename2.default)({ suffix: '.min' }));
 
   stream = stream.pipe(bolt.dest(_path2.default.join(paths.output, paths.styles.output)));
 

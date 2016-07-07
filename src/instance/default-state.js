@@ -5,7 +5,8 @@ let State = {
   production: [
     'state:setmode:production',
     'clean:dist',
-    'styles:build'
+    'styles:build',
+    'javascript:build'
   ],
 
   development: [

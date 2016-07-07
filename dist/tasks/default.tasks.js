@@ -1,12 +1,8 @@
 'use strict';
 
-var _bolt = require('./bolt');
+var _main = require('../main');
 
-var _bolt2 = _interopRequireDefault(_bolt);
-
-var _state = require('./state');
-
-var _state2 = _interopRequireDefault(_state);
+var _main2 = _interopRequireDefault(_main);
 
 var _fsExtra = require('fs-extra');
 
@@ -33,4 +29,4 @@ var tasks = {
   }
 };
 
-_bolt2.default.task(tasks);
+_main2.default.task(tasks);
